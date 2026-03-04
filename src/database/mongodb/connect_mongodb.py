@@ -1,14 +1,13 @@
-from pymongo import MongoClient
+from conf import mongodb_client
 
-uri = "mongodb://nraboy:password1234@localhost:27017"
-client = MongoClient(uri)
-try:
 
-    client.deployments.command("ping")
-    print("Connected successfully to", client.get_database('deployments'))
-    client.close()
+def connect_mongodb() -> None:
+    try:
+        mongodb_client.deployments.command("ping")
+        print("Connected successfully to", mongodb_client.get_database('deployments'))
+        mongodb_client.close()
 
-except Exception as e:
-    raise Exception(
-        "The received error is: ", e
-    )
+    except Exception as e:
+        raise Exception(
+            "The received error is: ", e
+        )
