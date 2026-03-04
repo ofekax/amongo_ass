@@ -7,7 +7,9 @@ from src.models.deployment.deployment import Deployment
 
 
 def main() -> None:
-    deployment: Deployment = Deployment()
+    username: str = "user2"
+    deployment: Deployment = Deployment(username=username)
+    print(deployment.username)
 
 
 if __name__ == '__main__':
