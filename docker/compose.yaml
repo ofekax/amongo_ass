@@ -8,12 +8,33 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-  server:
-    build:
-      context: ..
+  postgres-service:
+    image: postgres:18
+    container_name: postgres
+    environment:
+      POSTGRES_USER: ofekax
+      POSTGRES_PASSWORD: ofek123
+      POSTGRES_DB: deployments
     ports:
-      - 8000:8000
+      - "5433:5432"
 
+  pgadmin-service:
+    image: dpage/pgadmin4
+    container_name: padmin
+    ports:
+      - "15432:80"
+    environment:
+      # Required by pgAdmin
+      PGADMIN_DEFAULT_EMAIL: ofek.axelrad@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: ofek123
+      volumes:
+        #- ./pgadmin-data:/var/lib/pgadmin
+
+      # Don't require the user to login
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+
+      # Don't require a "master" password after logging in
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
 # start the database before your application. The `db-data` volume persists the
