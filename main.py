@@ -1,5 +1,5 @@
 # This is a sample Python script.
-from src.models.deployment.check_deployment import add_0_to_username
+from src.models.deployment.deployment import Deployment
 
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -7,7 +7,7 @@ from src.models.deployment.check_deployment import add_0_to_username
 
 
 def main() -> None:
-    add_0_to_username('user')
+    deployment: Deployment = Deployment()
 
 
 if __name__ == '__main__':

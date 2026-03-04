@@ -6,12 +6,18 @@ def is_one_digit_user(username: str) -> bool:
     return count == 1
 
 
-def add_0_to_one_digit_username(username: str) -> None:
-    fix_username: str = ''
+def fix_username(username: str) -> str:
+    new_username: str = ''
     for char in username:
         if not char.isdigit():
-            fix_username = fix_username + char
+            new_username = new_username + char
         else:
-            fix_username = fix_username + '0' + char
+            new_username = new_username + '0' + char
 
-    print(fix_username)
+    return new_username
+
+def check_username(username: str) -> str:
+    if is_one_digit_user:
+        return fix_username(username)
+    else:
+        return username
