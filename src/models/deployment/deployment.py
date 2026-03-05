@@ -5,8 +5,6 @@ from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
 
-from src.database.postgres.connect_to_postgres_db import db_engine
-
 
 class Base(DeclarativeBase):
     pass
@@ -24,6 +22,3 @@ class Deployment(Base):
     def __repr__(self) -> str:
         return (f"User(id={self.id!r}, db_name={self.db_name!r}, status={self.status!r}, username={self.username!r}, "
                 f"creation_time={self.creation_time!r})")
-
-
-

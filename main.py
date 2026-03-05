@@ -1,6 +1,5 @@
 # This is a sample Python script.
-from src.database.postgres.connect_to_postgres_db import check
-
+from src.database.postgres.connect_to_postgres_db import create_deployment_table
 
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -8,7 +7,8 @@ from src.database.postgres.connect_to_postgres_db import check
 
 
 def main() -> None:
-    check()
+    create_deployment_table()
+
 
 if __name__ == '__main__':
     main()
