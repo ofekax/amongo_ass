@@ -1,5 +1,7 @@
 # This is a sample Python script.
-from src.models.deployment.deployment import Deployment
+from src.database.postgres.connect_to_postgres_db import db_enginee
+from src.database.postgres.postgressql_and_padmin_settings import compose_file_setting
+from src.models.deployment.deployment_notgood import Deployment
 
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -7,9 +9,8 @@ from src.models.deployment.deployment import Deployment
 
 
 def main() -> None:
-    username: str = "user2"
-    deployment: Deployment = Deployment(username=username)
-    print(deployment.username)
+    db = db_enginee
+    print(db)
 
 
 if __name__ == '__main__':
