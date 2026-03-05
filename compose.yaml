@@ -13,10 +13,10 @@ networks:
 services:
   postgres-service:
     image: postgres:18.3
+    container_name: postgres
     ports:
       - "5432:5432"
     restart: always
-    #container_name: postgres
     environment:
       POSTGRES_DB: deployments
       POSTGRES_USER: postgres
@@ -28,7 +28,7 @@ services:
 
   pgadmin-service:
     image: dpage/pgadmin4:9.8
-    #container_name: padmin
+    container_name: padmin
     ports:
       - "5050:80"
     depends_on:
