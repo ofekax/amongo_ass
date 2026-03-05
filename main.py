@@ -1,5 +1,5 @@
 # This is a sample Python script.
-from src.database.postgres.connect_to_postgres_db import create_deployment_table
+from src.database.mongodb.connect_to_mongodb import create_db_in_mongodb
 
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -7,7 +7,7 @@ from src.database.postgres.connect_to_postgres_db import create_deployment_table
 
 
 def main() -> None:
-    create_deployment_table()
+    create_db_in_mongodb('slay')
 
 
 if __name__ == '__main__':

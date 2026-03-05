@@ -11,3 +11,7 @@ def connect_mongodb() -> None:
         raise Exception(
             "The received error is: ", e
         )
+
+def create_new_db_in_mongodb(db_name: str) -> None:
+    new_db = mongodb_client[db_name]
+
