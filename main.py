@@ -7,7 +7,7 @@ from src.database.mongodb.connect_to_mongodb import create_new_db_in_mongodb
 
 
 def main() -> None:
-    create_new_db_in_mongodb('slay')
+    create_new_db_in_mongodb('first db')
 
 
 if __name__ == '__main__':

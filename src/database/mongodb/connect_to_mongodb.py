@@ -14,5 +14,7 @@ def connect_mongodb() -> None:
 
 def create_new_db_in_mongodb(db_name: str) -> None:
     new_db = mongodb_client[db_name]
+    collection = new_db.create_collection('')
+    collection.insert_one({})
     mongodb_client.close()
     print(mongodb_client.get_database(db_name))
