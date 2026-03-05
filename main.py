@@ -1,5 +1,6 @@
 # This is a sample Python script.
 from src.database.mongodb.connect_to_mongodb import create_new_db_in_mongodb
+from src.models.db_model import MongodbDatabase
 
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -7,7 +8,9 @@ from src.database.mongodb.connect_to_mongodb import create_new_db_in_mongodb
 
 
 def main() -> None:
-    create_new_db_in_mongodb('first db')
+    data = {'admin_username': 'aa', 'database_name': 'nn', 'collection': 'c', 'collection_doc': {}}
+    db = MongodbDatabase(**data)
+    create_new_db_in_mongodb(db)
 
 
 if __name__ == '__main__':

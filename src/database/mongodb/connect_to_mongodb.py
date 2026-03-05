@@ -1,4 +1,5 @@
 from conf import mongodb_client
+from src.models.db_model import MongodbDatabase
 
 
 def connect_mongodb() -> None:
@@ -12,9 +13,9 @@ def connect_mongodb() -> None:
             "The received error is: ", e
         )
 
-def create_new_db_in_mongodb(db_name: str) -> None:
-    new_db = mongodb_client[db_name]
-    collection = new_db.create_collection('')
-    collection.insert_one({})
+def create_new_db_in_mongodb(mongodb_db: MongodbDatabase) -> None:
+    new_db = mongodb_client[mongodb_db.database_name]
+    collection = new_db.create_collection(mongodb_db.collection)
+    collection.insert_one(mongodb_db.collection_doc)
     mongodb_client.close()
-    print(mongodb_client.get_database(db_name))
+
