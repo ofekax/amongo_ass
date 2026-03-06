@@ -10,7 +10,7 @@ from src.rest_api.croud.create import create_deployment
 
 def main() -> None:
     create_deployment_table()
-    create_deployment('user55db', 'user55')
+    create_deployment('user555db', 'user555')
 
 
 if __name__ == '__main__':
