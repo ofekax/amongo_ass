@@ -1,4 +1,4 @@
-from sqlalchemy import String, Column, UUID, DateTime
+from sqlalchemy import String, Column
 import datetime
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped
@@ -14,7 +14,7 @@ class Deployment(Base):
     __tablename__ = 'deployments_metadata'
 
     id: str = Column(String, primary_key=True)
-    db_name: str = Column(String)
+    db_name: str = Column(String, )
     status: str = Column(String(50))
     username: str = Column(String(50))
     creation_time: datetime = Column(String)
