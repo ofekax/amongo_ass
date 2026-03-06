@@ -2,10 +2,6 @@ import datetime
 import uuid
 
 from sqlalchemy.orm import Session, sessionmaker
-from sqlalchemy import text
-from faker import Faker
-import psycopg2
-
 from conf import postgres_db_engine
 from src.models.deployment.deployment import Base, Deployment
 
