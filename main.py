@@ -1,8 +1,7 @@
 # This is a sample Python script.
-from src.database.postgres.connect_to_postgres_db import  \
-    insert_deployment_into_deployment_table
+from src.database.mongodb.connect_to_mongodb import create_new_db_in_mongodb
 from src.models.db_model import MongodbDatabase
-from src.rest_api.croud.create import add_deployment
+from src.rest_api.croud.create import create_deployment
 
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -10,7 +9,8 @@ from src.rest_api.croud.create import add_deployment
 
 
 def main() -> None:
-    insert_deployment_into_deployment_table("userthe_best", "userrr")
+
+    create_deployment('userq_best', 'userq')
 
 
 if __name__ == '__main__':

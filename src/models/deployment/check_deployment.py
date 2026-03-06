@@ -1,4 +1,4 @@
-def check_database_name(username: str, db_name: str) -> bool:
+def database_name_contains_username_as_prefix(username: str, db_name: str) -> bool:
     if not db_name.startswith(username):
         print('your database name should start with your username')
         return False
@@ -36,4 +36,4 @@ def check_username(username: str) -> str:
 
 
 def is_good_deployment_data(username: str, db_name: str) -> bool:
-    return not check_database_name(username, db_name) and username_contains_more_then_3_chars(username)
+    return database_name_contains_username_as_prefix(username, db_name) and username_contains_more_then_3_chars(username)
