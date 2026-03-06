@@ -12,10 +12,3 @@ def connect_mongodb() -> None:
         raise Exception(
             "The received error is: ", e
         )
-
-def create_new_db_in_mongodb(mongodb_db: MongodbDatabase) -> None:
-    new_db = mongodb_client[mongodb_db.database_name]
-    collection = new_db.create_collection(mongodb_db.collection)
-    collection.insert_one(mongodb_db.collection_doc)
-    mongodb_client.close()
-

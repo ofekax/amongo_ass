@@ -1,6 +1,7 @@
 # This is a sample Python script.
-from src.database.mongodb.connect_to_mongodb import create_new_db_in_mongodb
+from src.database.postgres.connect_to_postgres_db import create_deployment_table
 from src.models.db_model import MongodbDatabase
+from src.rest_api.croud.create import create_deployment
 
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -8,9 +9,8 @@ from src.models.db_model import MongodbDatabase
 
 
 def main() -> None:
-    data = {'admin_username': 'aa', 'database_name': 'nn', 'collection': 'c', 'collection_doc': {}}
-    db = MongodbDatabase(**data)
-    create_new_db_in_mongodb(db)
+    create_deployment_table()
+    create_deployment('user55db', 'user55')
 
 
 if __name__ == '__main__':
